@@ -9,28 +9,28 @@
   <body>
     <%let high = 0 %> <%let name %>
     <h1>Highest scoring candidate in round 1</h1>
-    <%candidate.map(a => { a.firstRound>high? high = a.firstRound :high = high
-    name = a.firstName +" " + a.lastName }) %> <%console.log(high,name)%>
+    <%candidate.map(a => { if(a.firstRound>high){high=a.firstRound
+    name=a.firstName+" "+a.lastName}}) %> <%console.log(high,name)%>
     <h3>Name : <%= name%></h3>
     <h3>Score : <%=high%></h3>
 
     <%let high2 = 0 %> <%let name2 %>
     <h1>Highest scoring candidate in round 2</h1>
-    <%candidate.map(a => { if(a.secondRound>high2){high2 = a.secondRound}name2 =
-    a.firstName +" " + a.lastName }) %> <%console.log(high2,name2)%>
+    <%candidate.map(a => { if(a.secondRound>high2){high2 = a.secondRound 
+    name2 =a.firstName +" " + a.lastName }}) %> <%console.log(high2,name2)%>
     <h3>Name : <%= name2%></h3>
     <h3>Score : <%=high2%></h3>
 
     <%let high3 = 0 %> <%let name3 %>
     <h1>Highest scoring candidate in round 3</h1>
-    <%candidate.map(a => { if(a.thirdRound>high3){high3 = a.thirdRound}name3 =
-    a.firstName +" " + a.lastName }) %> <%console.log(high3,name3)%>
+    <%candidate.map(a => { if(a.thirdRound>high3){high3 = a.thirdRound 
+    name3=a.firstName +" " + a.lastName }}) %> <%console.log(high3,name3)%>
     <h3>Name : <%= name3%></h3>
     <h3>Score : <%=high3%></h3>
 
     <h1>First Round Average Score</h1>
-    <% let avgFirstRound = candidate.map(a => a.firstRound).reduce((a,b) => b+=a)%>
-    <%let avgF = Math.round(avgFirstRound/candidate.length)%>
+    <% let avgFirstRound = candidate.map(a => a.firstRound).reduce((a,b)=>b+=a)
+    let avgF = Math.round(avgFirstRound/candidate.length)%>
 
     <h3>First Round Average : <%=avgF%></h3>
 

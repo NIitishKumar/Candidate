@@ -13,7 +13,10 @@ app.use(
   })
 );
 
-mongoose.connect("mongodb://localhost:27017/userDB", { useNewUrlParser: true });
+mongoose.connect(
+  "mongodb+srv://admin_mohit:test1234@cluster0.ygnua.mongodb.net/candidateDB?retryWrites=true&w=majority",
+  { useNewUrlParser: true }
+);
 mongoose.set("useCreateIndex", true);
 
 const candidateSchema = new mongoose.Schema({
